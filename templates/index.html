@@ -10,13 +10,20 @@
       background: transparent;
       font-family: 'Microsoft JHengHei';
       color: white;
-      filter: drop-shadow(1px 1px black)
+      filter: drop-shadow(1px 1px black);
+      text-align: center;
+    }
+    h1 {
+      font-size: 4em;
+    }
+    h2 {
+      font-size: 3em;
     }
   </style>
 </head>
 <body>
-  <h1>{{title}}</h1>
-  <p>{{composer}}</p>
+  <h2>NOW PLAYING</h2>
+  <h1>{{composer}} - {{title}}</h1>
   <script>
     setInterval(() => {
       location.reload()
