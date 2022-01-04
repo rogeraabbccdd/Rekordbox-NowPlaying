@@ -1,0 +1,7 @@
+Flask==2.0.1
+numpy==1.19.4
+Pillow==9.0.0
+pyscreenshot==3.0
+pytesseract==0.3.8
+pywin32==300
+win32gui==221.6
