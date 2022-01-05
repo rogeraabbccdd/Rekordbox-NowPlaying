@@ -2,7 +2,7 @@
 # Imports
 # ***************
 from PIL import Image
-from config import tesseract_cmd, captureInterval
+from config import tesseract_cmd, captureInterval, lang
 import numpy as np
 import win32gui
 import pytesseract
@@ -49,7 +49,7 @@ def capture ():
     # Save screenshot
     # im.save('./T1Title.png')
     # Extract text
-    title = pytesseract.image_to_string(im, lang='jpn+eng').strip()
+    title = pytesseract.image_to_string(im, lang=lang).strip()
     # print(title)
 
     # Get Track 1 composer text position
@@ -64,7 +64,7 @@ def capture ():
     # Save screenshot
     # im.save('./T1Composer.png')
     # Extract text
-    composer = pytesseract.image_to_string(im, lang='jpn+eng').strip()
+    composer = pytesseract.image_to_string(im, lang=lang).strip()
     # print(composer)
 
   else:
@@ -80,7 +80,7 @@ def capture ():
     # Save screenshot
     # im.save('./T2Title.png')
     # Extract text
-    title = pytesseract.image_to_string(im, lang='jpn+eng').strip()
+    title = pytesseract.image_to_string(im, lang=lang).strip()
     # print(title)
 
     # Get Track 2 composer text position
@@ -95,7 +95,7 @@ def capture ():
     # Save screenshot
     # im.save('./T2Composer.png')
     # Extract text
-    composer = pytesseract.image_to_string(im, lang='jpn+eng').strip()
+    composer = pytesseract.image_to_string(im, lang=lang).strip()
     # print(composer)
 
   # Update global variables
