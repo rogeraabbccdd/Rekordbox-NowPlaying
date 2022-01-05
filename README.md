@@ -1,5 +1,8 @@
 # Rekordbox NowPlaying
-Get now playing track in rekordbox.
+Get now playing track in rekordbox.  
+**ONLY WORKS WHEN REKORDBOX IS 1920*1080 FULLSCREEN ON MONITOR 1**  
+  
+![screenshot](screenshot.png)
 
 # Requirements
 - Python 3 (Only tested with Python 3.8.2)
