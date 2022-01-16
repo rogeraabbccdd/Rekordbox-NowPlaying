@@ -1,15 +1,18 @@
 # Import flask to host a web server for OBS
 from threading import Timer
 from flask import Flask, render_template
-from config import updateInterval, captureInterval
+from config import updateInterval, captureInterval, discordInterval
 from capture import data, capture
 from functools import partial
+from rpc import updateRPC
 
 # Capture repeatedly
 def repeat(func, interval):
   func()
   Timer(interval, partial(repeat, func, interval)).start()
+
 repeat(capture, captureInterval)
+repeat(updateRPC, discordInterval)
 
 # Flask settings
 app = Flask(__name__)

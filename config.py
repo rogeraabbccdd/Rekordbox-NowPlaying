@@ -6,3 +6,7 @@ updateInterval = 5000
 tesseract_cmd = 'F:/work/Tesseract/tesseract.exe'
 # Track and composer language
 lang='eng'
+# Discord token
+discordToken = '932152787050070066'
+# Discord RPC update interval second
+discordInterval = 2
