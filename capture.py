@@ -61,7 +61,7 @@ def capture ():
     # im.save('./T1Title.png')
     # im.show()
     # Extract text
-    title = pytesseract.image_to_string(im, lang=lang, config='--psm 7 --oem 1').strip()
+    title = pytesseract.image_to_string(im, lang=lang, config='--psm 7 --oem 1  -c preserve_interword_spaces=1').strip()
     # print(title)
 
     # Get Track 1 composer text position
@@ -81,7 +81,7 @@ def capture ():
     # im.save('./T1Composer.png')
     # im.show()
     # Extract text
-    composer = pytesseract.image_to_string(im, lang=lang, config='--psm 7 --oem 1').strip()
+    composer = pytesseract.image_to_string(im, lang=lang, config='--psm 7 --oem 1  -c preserve_interword_spaces=1').strip()
     # print(composer)
 
   else:
@@ -102,7 +102,7 @@ def capture ():
     # im.save('./T2Title.png')
     # im.show()
     # Extract text
-    title = pytesseract.image_to_string(im, lang=lang, config='--psm 7 --oem 1').strip()
+    title = pytesseract.image_to_string(im, lang=lang, config='--psm 7 --oem 1  -c preserve_interword_spaces=1').strip()
     # print(title)
 
     # Get Track 2 composer text position
@@ -122,7 +122,7 @@ def capture ():
     # im.save('./T2Composer.png')
     # im.show()
     # Extract text
-    composer = pytesseract.image_to_string(im, lang=lang, config='--psm 7 --oem 1').strip()
+    composer = pytesseract.image_to_string(im, lang=lang, config='--psm 7 --oem 1  -c preserve_interword_spaces=1').strip()
     # print(composer)
 
   # Update global variables
