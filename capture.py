@@ -7,6 +7,7 @@ import numpy as np
 import win32gui
 import pytesseract
 import pyscreenshot as ImageGrab
+import cv2
 
 # ***************
 # Global variables
@@ -53,11 +54,12 @@ def capture ():
     T1TitleBot = T1TitleTop + T1TitleHeight
     # Take screenshot of track 1 title
     im = ImageGrab.grab(bbox=(T1TitleLeft, T1TitleTop, T1TitleRight, T1TitleBot))
-    enh_sha = ImageEnhance.Sharpness(im)
-    im = enh_sha.enhance(sharpness)
-    enh_con = ImageEnhance.Contrast(im)
-    im = enh_con.enhance(contrast)
+    im = np.array(im)
+    im = cv2.resize(im, (T1TitleWidth*3, T1TitleHeight*3))
+    im = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
+    im = cv2.threshold(im, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)[1]
     # Save screenshot
+    # im = Image.fromarray(im)
     # im.save('./T1Title.png')
     # im.show()
     # Extract text
@@ -66,18 +68,19 @@ def capture ():
 
     # Get Track 1 composer text position
     T1ComposerLeft = left + 69
-    T1ComposerTop = top + 322
+    T1ComposerTop = top + 320
     T1ComposerWidth = 153
     T1ComposerHeight = 15
     T1ComposerRight = T1ComposerLeft + T1ComposerWidth
     T1ComposerBot = T1ComposerTop + T1ComposerHeight
     # Take screenshot of track 1 composer
     im = ImageGrab.grab(bbox=(T1ComposerLeft, T1ComposerTop, T1ComposerRight, T1ComposerBot))
-    enh_sha = ImageEnhance.Sharpness(im)
-    im = enh_sha.enhance(sharpness)
-    enh_con = ImageEnhance.Contrast(im)
-    im = enh_con.enhance(contrast)
+    im = np.array(im)
+    im = cv2.resize(im, (T1ComposerWidth*3, T1ComposerHeight*3))
+    im = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
+    im = cv2.threshold(im, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)[1]
     # Save screenshot
+    # im = Image.fromarray(im)
     # im.save('./T1Composer.png')
     # im.show()
     # Extract text
@@ -94,11 +97,12 @@ def capture ():
     T2TitleBot = T2TitleTop + T2TitleHeight
     # Take screenshot of track 1 title
     im = ImageGrab.grab(bbox=(T2TitleLeft, T2TitleTop, T2TitleRight, T2TitleBot))
-    enh_sha = ImageEnhance.Sharpness(im)
-    im = enh_sha.enhance(sharpness)
-    enh_con = ImageEnhance.Contrast(im)
-    im = enh_con.enhance(contrast)
+    im = np.array(im)
+    im = cv2.resize(im, (T2TitleWidth*3, T2TitleHeight*3))
+    im = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
+    im = cv2.threshold(im, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)[1]
     # Save screenshot
+    # im = Image.fromarray(im)
     # im.save('./T2Title.png')
     # im.show()
     # Extract text
@@ -107,18 +111,19 @@ def capture ():
 
     # Get Track 2 composer text position
     T2ComposerLeft = left + 1077
-    T2ComposerTop = top + 322
+    T2ComposerTop = top + 320
     T2ComposerWidth = 154
     T2ComposerHeight = 15
     T2ComposerRight = T2ComposerLeft + T2ComposerWidth
     T2ComposerBot = T2ComposerTop + T2ComposerHeight
     # Take screenshot of track 1 composer
     im = ImageGrab.grab(bbox=(T2ComposerLeft, T2ComposerTop, T2ComposerRight, T2ComposerBot))
-    enh_sha = ImageEnhance.Sharpness(im)
-    im = enh_sha.enhance(sharpness)
-    enh_con = ImageEnhance.Contrast(im)
-    im = enh_con.enhance(contrast)
+    im = np.array(im)
+    im = cv2.resize(im, (T2ComposerWidth*3, T2ComposerHeight*3))
+    im = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
+    im = cv2.threshold(im, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)[1]
     # Save screenshot
+    # im = Image.fromarray(im)
     # im.save('./T2Composer.png')
     # im.show()
     # Extract text
